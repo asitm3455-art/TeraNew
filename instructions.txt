@@ -1,0 +1,97 @@
+Create a fully working Python Telegram bot using Pyrogram with the folder structure below.  
+This bot must download Terabox links using this API:
+https://teraapi.boogafantastic.workers.dev/play?url=YOUR_LINK
+ 
+### BOT FEATURES ###
+ 
+1. LOG_CHANNEL → save new user join logs  
+2. ERRORS_CHANNEL → forward failed download link + user info  
+3. STORAGE_CHANNEL → send all downloaded files + user info  
+4. Auto-Rename Feature →  
+   Users can set default filename prefix (saved in mongodb)  
+5. Anti-Spam + Rate Limit  
+6. FloodWait handling  
+7. Progress bar during uploading  
+8. Direct link extractor + file name fetcher  
+9. Downloading via direct API URL  
+10. Custom thumbnail support for uploaded files  
+11. Start, Help commands  
+12. Broadcast message system for owner  
+13. Permanent user database (MongoDB)
+
+ 
+### FOLDER STRUCTURE ###
+
+TeraBoxBot/
+│── bot.py (Main file)
+│── config.py
+│── script.py
+│── requirements.txt
+│
+├── database/
+│   ├── init.py
+│   ├── db.py
+│   └── user_settings.py
+│
+├── handlers/
+│   ├── init.py
+│   ├── start.py
+│   ├── download.py
+│   ├── commands.py
+│   ├── errors.py
+│   ├── rename.py
+│   ├── broadcast.py
+│   └── thumbnail.py
+│
+├── utils/
+│   ├── init.py
+│   ├── api.py
+│   ├── progress.py
+│   ├── helper.py
+│   └── logger.py
+
+===============================
+### WHAT TO GENERATE ###
+===============================
+Write complete, ready-to-run code for:
+
+1. bot.py → initialize bot, load handlers  
+2. config.py → required env variables  
+3. script.py → Contains all visual text, captions, messages, UI strings
+4. database/db.py → MongoDB connection  
+5. database/user_settings.py → store auto-rename + thumbnail  
+6. handlers/start.py → /start & /help  
+7. handlers/download.py → main terabox downloader  
+8. handlers/commands.py → Contains all command names, organized cleanly
+9. handlers/rename.py → set auto rename prefix  
+10. handlers/thumbnail.py → upload/view/remove thumbnail  
+11. handlers/broadcast.py → owner-only broadcast system  
+12. utils/api.py → call terabox API & extract direct download link  
+13. utils/progress.py → progress bar  
+14. utils/helper.py → small utilities  
+15. utils/logger.py → send logs & errors to channels  
+16. requirements.txt
+
+===============================
+### API FORMAT ###
+===============================
+Call API like:
+https://teraapi.boogafantastic.workers.dev/play?url=YOUR_LINK
+
+API returns JSON:
+{
+ "status": "success",
+ "file_name": "",
+ "size": "",
+ "direct_link": ""
+}
+
+===============================
+### EXPECTED OUTPUT ###
+===============================
+- Generate all .py files with clean formatting  
+- Add comments so it's easy for beginners  
+- Use Pyrogram v2  
+- Final bot MUST be production-ready  
+- No placeholders; use actual working code  
+- Make sure every file imports correctly
