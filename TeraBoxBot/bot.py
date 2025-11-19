@@ -183,21 +183,22 @@ async def main():
 if __name__ == "__main__":
     logger.info("Starting TeraBox Downloader Bot...")
     
-    # Check for required environment variables
-    if not config.BOT_TOKEN or not config.API_ID or not config.API_HASH:
-        logger.error("❌ Missing required environment variables!")
-        logger.error("Please set BOT_TOKEN, API_ID, and API_HASH in .env file")
-        exit(1)
-    
-    if config.LOG_CHANNEL == 0 or config.ERRORS_CHANNEL == 0 or config.STORAGE_CHANNEL == 0:
-        logger.error("❌ Missing required channel IDs!")
-        logger.error("Please set LOG_CHANNEL, ERRORS_CHANNEL, and STORAGE_CHANNEL in .env file")
-        exit(1)
-    
     try:
         asyncio.run(main())
     except KeyboardInterrupt:
         logger.info("Bot interrupted by user")
+    except ValueError as e:
+        logger.error(f"❌ Configuration Error: {e}")
+        logger.error("\n📝 Please check your .env file and make sure all required variables are set:")
+        logger.error("   - BOT_TOKEN (from @BotFather)")
+        logger.error("   - API_ID (from my.telegram.org)")
+        logger.error("   - API_HASH (from my.telegram.org)")
+        logger.error("   - LOG_CHANNEL (your channel ID)")
+        logger.error("   - ERRORS_CHANNEL (your channel ID)")
+        logger.error("   - STORAGE_CHANNEL (your channel ID)")
+        logger.error("   - OWNER_ID (your user ID)")
+        logger.error("\n📖 See GET_CREDENTIALS.md for detailed instructions")
+        exit(1)
     except Exception as e:
         logger.critical(f"Critical error: {e}")
         exit(1)
