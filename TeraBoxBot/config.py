@@ -5,21 +5,21 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Bot Configuration
-BOT_TOKEN = os.getenv("BOT_TOKEN", "")
-API_ID = int(os.getenv("API_ID", "0"))
-API_HASH = os.getenv("API_HASH", "")
+BOT_TOKEN = os.getenv("BOT_TOKEN", "8593002387:AAHDSfKf7VURo5HemGum4Nza-LmvqDBD8lU")
+API_ID = int(os.getenv("API_ID", "21265734"))
+API_HASH = os.getenv("API_HASH", "515aa3c7024f499d16e6a0ff563955e3")
 
 # MongoDB Configuration
-MONGO_URI = os.getenv("MONGO_URI", "mongodb://localhost:27017")
+MONGO_URI = os.getenv("MONGO_URI", "mongodb+srv://gekasi8728:kingkhan@cluster0.ilgcdab.mongodb.net/?retryWrites=true&w=majority")
 DB_NAME = os.getenv("DB_NAME", "terabot_db")
 
 # Channel IDs
-LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "0"))
-ERRORS_CHANNEL = int(os.getenv("ERRORS_CHANNEL", "0"))
-STORAGE_CHANNEL = int(os.getenv("STORAGE_CHANNEL", "0"))
+LOG_CHANNEL = int(os.getenv("LOG_CHANNEL", "-1003347866431"))
+ERRORS_CHANNEL = int(os.getenv("ERRORS_CHANNEL", "-1003347866431")
+STORAGE_CHANNEL = int(os.getenv("STORAGE_CHANNEL", "-1003347866431"))
 
 # Owner ID
-OWNER_ID = int(os.getenv("OWNER_ID", "0"))
+OWNER_ID = int(os.getenv("OWNER_ID", "8302560804"))
 
 # API Configuration
 TERABOX_API = "https://teraapi.boogafantastic.workers.dev/play"
